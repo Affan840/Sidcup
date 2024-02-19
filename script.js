@@ -181,7 +181,6 @@ Array.from(boxes).forEach(e => {
 })
 
 let lis = document.querySelectorAll(".footer li");
-console.log(lis);
 lis.forEach(function (e) {
     e.style.cursor = "pointer";
     e.addEventListener("mouseover", mouseEnter);
@@ -198,3 +197,16 @@ gsap.from(".bg-text span", {
         scrub: 2,
     }
 })
+
+document.querySelector(".hamburger").addEventListener("click", function () {
+    let navbar = document.querySelector(".respNav");
+    let hamburgerIcon = document.getElementById("hamburgerIcon");
+
+    if (navbar.style.display === "flex") {
+        navbar.style.display = "none";
+        hamburgerIcon.src = "hamburger.svg";
+    } else {
+        navbar.style.display = "flex";
+        hamburgerIcon.src = "close.svg";
+    }
+});
